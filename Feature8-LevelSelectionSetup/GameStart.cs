@@ -7,20 +7,20 @@ using UnityEngine.UI;
 
 public class GameStart : MonoBehaviour
 {
-    public Button buttonPlay;
-
+    [SerializeField] private GameObject LevelSelection;
+    [SerializeField] private Button buttonPlay;
 
     private void Awake()
     {
-        buttonPlay.onClick.AddListener(Level1);
-        //buttonPlay.onClick.AddListener(Level2);
-        //buttonPlay.onClick.AddListener(Level3);
-      //  buttonPlay.onClick.AddListener(Level4);
+        buttonPlay.onClick.AddListener(PlayGame);
     }
 
-    private void Level1()
+    private void PlayGame()
     {
+        LevelSelection.SetActive(true);
         SceneManager.LoadScene(1);
-
+        SceneManager.LoadScene(2);
+        SceneManager.LoadScene(3);
+        SceneManager.LoadScene(4);
     }
 }
