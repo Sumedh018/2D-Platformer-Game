@@ -7,20 +7,17 @@ using UnityEngine.UI;
 
 public class GameStart : MonoBehaviour
 {
-    [SerializeField] private GameObject LevelSelection;
-    [SerializeField] private Button buttonPlay;
+    public Button button;
+    public int newScene;
 
-    private void Awake()
+    private void Start()
     {
-        buttonPlay.onClick.AddListener(PlayGame);
+        button.onClick.AddListener(OnButtonClick);
     }
 
-    private void PlayGame()
+    private void OnButtonClick()
     {
-        LevelSelection.SetActive(true);
-        SceneManager.LoadScene(1);
-        SceneManager.LoadScene(2);
-        SceneManager.LoadScene(3);
-        SceneManager.LoadScene(4);
+        Debug.Log("Button Clicked");
+        SceneManager.LoadScene(newScene);
     }
 }
